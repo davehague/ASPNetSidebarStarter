@@ -1,0 +1,30 @@
+﻿@model FmxLite.Model.User
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Delete User";
+}
+
+<div class="container-fluid details-container">
+    <div class="d-flex mt-4 mb-4">
+        <h2>Delete @Model.Name?</h2>
+    </div>
+
+    <div class="details-header">
+        <div class="container-fluid p-3 bg-light rounded-top">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center align-items-center" style="height: 75px; gap: 1rem;">
+                    <form asp-action="DeleteConfirmed" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                    </form>
+                    <a class="btn btn-secondary" href="@Url.Action("Details", "Users", new { id = Model.Id })">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p><strong>Name:</strong> @Model.Name</p>
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+</div>

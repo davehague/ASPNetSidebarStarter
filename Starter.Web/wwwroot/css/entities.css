@@ -1,0 +1,59 @@
+﻿.entity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.entity-card {
+    flex: 1;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.stretched-link {
+    text-decoration: none;
+    color: navy;
+    position: relative;
+}
+
+.details-container {
+    padding: 5px;
+}
+
+.details-header {
+    background-color: #f8f9fa;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.action-button {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none; 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px;
+    margin-right: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-button i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.action-button:hover {
+    background-color: lightblue;
+    color: #333;
+}

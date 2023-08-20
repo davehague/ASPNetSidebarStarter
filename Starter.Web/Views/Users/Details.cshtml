@@ -1,0 +1,36 @@
+﻿@model FmxLite.Model.User
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "User Details";
+}
+
+<div class="container-fluid details-container">
+    <div class="d-flex mt-4 mb-4">
+        <h2>@Model.Name</h2>
+    </div>
+
+    <div class="details-header">
+        <div class="container-fluid p-3 bg-light rounded-top">
+            <div class="row">
+                <div class="col d-flex align-items-center">
+                    <a class="action-button" href="@Url.Action("Index", "Users")">
+                        <i class="fas fa-arrow-left"></i>
+                        <div>Back</div>
+                    </a>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <a class="action-button" href="@Url.Action("Edit", "Users", new { id = Model.Id })">
+                        <i class="fas fa-edit"></i>
+                        <div>Edit</div>
+                    </a>
+                    <a class="action-button ml-2" href="@Url.Action("Delete", "Users", new { id = Model.Id })">
+                        <i class="fas fa-trash"></i>
+                        <div>Delete</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p><strong>Phone Number:</strong> @Model.PhoneNumber</p>
+</div>

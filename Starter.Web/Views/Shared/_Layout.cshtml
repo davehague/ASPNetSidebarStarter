@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ASPNet-SidebarStarter</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/entities.css">
+    <script src="https://kit.fontawesome.com/558ad7a037.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Navigation Bar -->
+            <div class="col-lg-2 col-md-3 col-sm-4 bg-light min-vh-100 d-flex flex-column align-items-center">
+                <div class="logo-container mt-3 mb-4">
+                    <img src="~/images/logo.png" alt="Logo" class="logo-img">
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Users" ? "active-nav-item" : "")" asp-controller="Users" asp-action="Index">
+                            <i class="fas fa-users"></i>
+                            <span class="nav-text">Users</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- Main Content -->
+            <div class="col-lg-10 col-md-9 col-sm-8">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
