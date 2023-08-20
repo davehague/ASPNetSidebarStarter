@@ -44,11 +44,11 @@ namespace FmxLite.Web.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var building = await userService.Get(id); 
-            if (building == null)
+            var user = await userService.Get(id); 
+            if (user == null)
                 return NotFound();
 
-            return View(building);
+            return View(user);
         }
 
         public async Task<IActionResult> Edit(int id)
